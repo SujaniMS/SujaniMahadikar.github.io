@@ -1,302 +1,883 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sujani MS | Portfolio</title>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #7dd3fc;
-        }
+    <title>Sujani Mahadikar | Portfolio</title>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
+```
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 0 20px;
-        }
+<!-- AOS Animation -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 0;
-        }
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/style.css">
 
-        header {
-            margin-bottom: 60px;
-            animation: fadeIn 1s ease-out;
-        }
+<!-- Icons -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+```
 
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            margin-bottom: 8px;
-        }
-
-        .subtitle {
-            font-size: 1.25rem;
-            color: var(--accent);
-            font-weight: 500;
-            margin-bottom: 16px;
-        }
-
-        .bio {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin-bottom: 24px;
-        }
-
-        .links {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: #0f172a;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            border: 1px solid var(--text-muted);
-            color: var(--text-main);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        section {
-            margin-bottom: 50px;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 8px;
-            margin-bottom: 24px;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background-color: var(--card-bg);
-            color: var(--accent);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid #334155;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border: 1px solid #334155;
-            border-radius: 8px;
-            padding: 24px;
-            transition: transform 0.2s, border-color 0.2s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent);
-        }
-
-        .project-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-            color: var(--text-main);
-        }
-
-        .project-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 16px;
-            flex-grow: 1;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .project-tags span {
-            font-size: 0.75rem;
-            background: #0f172a;
-            color: var(--text-muted);
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
-
-        .badge-star {
-            background-color: #38bdf8 !important;
-            color: #0f172a !important;
-            font-weight: bold;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            .container { padding: 30px 0; }
-        }
-    </style>
 </head>
+
 <body>
 
-    <div class="container">
-        
-        <!-- HERO SECTION -->
-        <header>
-            <h1>Sujani MS</h1>
-            <div class="subtitle">Full Stack Web Developer & AI SDE Engineeer</div>
-            <p class="bio">
-                Passionate developer specializing in building scalable web ecosystems and ML-driven backends. Experienced in creating predictive models and interactive user interfaces. Graduated with a 8.76 CGPA from Tumkur University.
-            </p>
-            <div class="links">
-                <a href="mailto:sujanimahadikar@gmail.com" class="btn btn-primary"><i class="fa-regular fa-envelope"></i> Contact Me</a>
-                <a href="http://linkedin.com" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
-            </div>
-        </header>
+<!-- ===================================== -->
 
-        <!-- TECHNICAL EXPERIENCE AND SKILLS -->
-        <section>
-            <h2><i class="fa-solid fa-code" style="color: var(--accent);"></i> Skills & Technologies</h2>
-            <div class="skills-grid">
-                <span class="skill-tag">Python (Flask)</span>
-                <span class="skill-tag">Angular</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">JavaScript / Java</span>
-                <span class="skill-tag">SQL (MySQL, MS SQL, Oracle)</span>
-                <span class="skill-tag">Scikit-learn</span>
-                <span class="skill-tag">Pandas / NumPy</span>
-                <span class="skill-tag">HTML5 / CSS3 / Bootstrap</span>
-                <span class="skill-tag">D3.js / Data Visualization</span>
-            </div>
-        </section>
+<!-- LOADER -->
 
-        <!-- NEW COMPREHENSIVE PROJECTS GRID -->
-        <section>
-            <h2><i class="fa-solid fa-laptop-code" style="color: var(--accent);"></i> AI & Web Development Projects</h2>
-            <div class="projects-grid">
-                
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div>
-                        <h3>Shipment Production Forecasting</h3>
-                        <p>Designed a Flask-based backend integrated with an ML model via REST API for predictive modeling of shipment delivery times using historical datasets.</p>
-                    </div>
-                    <div class="project-tags">
-                        <span class="badge-star">AI Backend</span>
-                        <span>Python</span>
-                        <span>Flask</span>
-                        <span>Predictive ML</span>
-                    </div>
-                </div>
+<!-- ===================================== -->
 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div>
-                        <h3>Myntra Review Scraper</h3>
-                        <p>Built and deployed an active scraper and backend pipeline to deliver real-time user review data extraction paired with text sentiment analysis modeling.</p>
-                    </div>
-                    <div class="project-tags">
-                        <span class="badge-star">AI/NLP</span>
-                        <span>Python</span>
-                        <span>Flask</span>
-                        <span>Sentiment Analysis</span>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div>
-                        <h3>Sensor Fault Detection</h3>
-                        <p>Implemented a robust data pipeline utilizing scikit-learn to handle real-time sensor anomaly streams, hitting a checked 80% accuracy metric.</p>
-                    </div>
-                    <div class="project-tags">
-                        <span class="badge-star">Machine Learning</span>
-                        <span>Pandas</span>
-                        <span>NumPy</span>
-                        <span>Scikit-Learn</span>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div>
-                        <h3>Dynamic Freelance Web Solutions</h3>
-                        <p>Developed responsive user interfaces, landing hubs, CMS frameworks, and custom dashboards using Angular, Bootstrap, PHP, and relational query databases.</p>
-                    </div>
-                    <div class="project-tags">
-                        <span>Full-Stack</span>
-                        <span>Angular</span>
-                        <span>Node.js</span>
-                        <span>SQL Server</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+<div id="loader">
+    <div class="loader-text">
+        <span>S</span>
+        <span>U</span>
+        <span>J</span>
+        <span>A</span>
+        <span>N</span>
+        <span>I</span>
 
     </div>
+</div>
+
+<!-- ===================================== -->
+
+<!-- CURSOR GLOW -->
+
+<!-- ===================================== -->
+
+<div class="cursor-glow"></div>
+
+<!-- ===================================== -->
+
+<!-- PARTICLE BACKGROUND -->
+
+<!-- ===================================== -->
+
+<div id="particles"></div>
+
+<!-- ===================================== -->
+
+<!-- NAVBAR -->
+
+<!-- ===================================== -->
+
+<header class="navbar">
+
+
+<div class="logo">
+    SM
+</div>
+
+<nav>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="menu-btn">
+    <i class="fas fa-bars"></i>
+</div>
+
+</header>
+
+<!-- ===================================== -->
+
+<!-- HERO SECTION -->
+
+<!-- ===================================== -->
+
+<section id="home" class="hero">
+
+<div class="hero-content">
+
+    <p class="hero-tag">
+        Welcome to my portfolio
+    </p>
+
+    <h1 class="hero-name">
+
+        <span>S</span>
+        <span>U</span>
+        <span>J</span>
+        <span>A</span>
+        <span>N</span>
+        <span>I</span>
+
+        <br>
+
+        <span>M</span>
+        <span>A</span>
+        <span>H</span>
+        <span>A</span>
+        <span>D</span>
+        <span>I</span>
+        <span>K</span>
+        <span>A</span>
+        <span>R</span>
+
+    </h1>
+
+    <h2 class="typing-text">
+        <span id="typed-role"></span>
+    </h2>
+
+    <p class="hero-description">
+
+        Production Support Engineer with hands-on
+        experience in healthcare applications,
+        automation frameworks, monitoring systems,
+        and full stack web development.
+
+        Passionate about building scalable applications,
+        improving operational efficiency, and solving
+        complex technical challenges.
+
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#" class="btn primary-btn">
+            Download Resume
+        </a>
+
+        <a href="#contact" class="btn secondary-btn">
+            Contact Me
+        </a>
+
+    </div>
+
+</div>
+
+<div class="hero-avatar">
+
+    <div class="avatar-ring"></div>
+
+    <div class="avatar-card">
+
+        <div class="avatar-initials">
+            SM
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- ===================================== -->
+
+<!-- ABOUT -->
+
+<!-- ===================================== -->
+
+<section id="about" class="about section">
+
+
+<div class="section-title" data-aos="fade-up">
+
+    <span>01</span>
+    <h2>About Me</h2>
+
+</div>
+
+<div class="about-container">
+
+    <div class="glass-card" data-aos="fade-right">
+
+        <h3>Who Am I?</h3>
+
+        <p>
+
+            I am Sujani Mahadikar, a passionate
+            Full Stack Developer and Production
+            Support Engineer currently working with
+            IBM on healthcare domain applications.
+
+        </p>
+
+        <p>
+
+            My expertise spans across software
+            development, automation engineering,
+            monitoring systems, cloud technologies,
+            and application support.
+
+        </p>
+
+        <p>
+
+            I enjoy creating innovative solutions
+            that improve performance, reliability,
+            and user experience.
+
+        </p>
+
+    </div>
+
+    <div class="glass-card" data-aos="fade-left">
+
+        <h3>Education</h3>
+
+        <div class="education-card">
+
+            <h4>
+                Bachelor of Computer Applications
+            </h4>
+
+            <p>Tumkur University</p>
+
+            <span>2021 - 2024</span>
+
+            <h5>CGPA: 8.76</h5>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- ===================================== -->
+
+<!-- EXPERIENCE -->
+
+<!-- ===================================== -->
+
+<section id="experience" class="experience section">
+
+
+<div class="section-title" data-aos="fade-up">
+
+    <span>02</span>
+    <h2>Experience</h2>
+
+</div>
+
+<div class="timeline">
+
+    <div class="timeline-item" data-aos="fade-up">
+
+        <div class="timeline-content">
+
+            <span class="year">
+                Jun 2025 - Present
+            </span>
+
+            <h3>
+                IBM
+            </h3>
+
+            <h4>
+                Technical Support Representative Intern
+            </h4>
+
+            <p>
+
+                Working on Horizon BCBS NJ healthcare
+                applications. Developed synthetic
+                monitoring frameworks using Python,
+                Selenium and Pytest.
+
+            </p>
+
+            <ul>
+
+                <li>Application Monitoring</li>
+                <li>Splunk & Kibana Analysis</li>
+                <li>ServiceNow Incident Handling</li>
+                <li>JDK Upgrade Activities</li>
+                <li>DevSecOps Initiatives</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="timeline-item" data-aos="fade-up">
+
+        <div class="timeline-content">
+
+            <span class="year">
+                Aug 2024 - Mar 2025
+                Full Stack Developer
+            </span>
+
+            <h3>
+                Freelance Full Stack Developer
+            </h3>
+
+            <p>
+
+                Built enterprise applications
+                using Angular, C#.NET and SQL
+                Server for manufacturing clients.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="timeline-item" data-aos="fade-up">
+
+        <div class="timeline-content">
+
+            <span class="year">
+                Mar 2025 - May 2025 
+                Internship
+            </span>
+
+            <h3>
+                TruBranders
+            </h3>
+
+            <h4>
+                Web Developer Intern
+            </h4>
+
+            <p>
+
+                Worked on frontend development,
+                responsive design, website
+                optimization and client projects.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- ===================================== -->
+
+<!-- SKILLS -->
+
+<!-- ===================================== -->
+
+<section id="skills" class="skills section">
+
+     <div class="section-title">
+        <span>03</span>
+        <h2>Skills</h2>
+    </div>
+
+    <div class="domain-card">
+
+    <div class="domain-header">
+        <div class="domain-icon">
+            <i class="fas fa-code"></i>
+        </div>
+
+        <div>
+            <h3>Frontend Development</h3>
+            <p>Building modern responsive interfaces</p>
+        </div>
+    </div>
+
+    <div class="skill-tags">
+        <span><i class="fab fa-html5"></i> HTML5</span>
+        <span><i class="fab fa-css3-alt"></i> CSS3</span>
+        <span><i class="fab fa-js"></i> JavaScript</span>
+        <span><i class="fab fa-angular"></i> Angular</span>
+        <span><i class="fab fa-bootstrap"></i> Bootstrap</span>
+        <span><i class="fas fa-chart-line"></i> D3.js</span>
+    </div>
+
+</div>
+
+    <div class="domain-card">
+
+    <div class="domain-header">
+        <div class="domain-icon">
+            <i class="fas fa-server"></i>
+        </div>
+
+        <div>
+            <h3>Backend Development</h3>
+            <p>Building scalable APIs and business logic</p>
+        </div>
+    </div>
+
+    <div class="skill-tags">
+        <span><i class="fab fa-python"></i> Python</span>
+        <span><i class="fas fa-flask"></i> Flask</span>
+        <span><i class="fab fa-node-js"></i> Node.js</span>
+        <span><i class="fab fa-php"></i> PHP</span>
+        <span><i class="fab fa-java"></i> Java</span>
+        <span><i class="fas fa-code"></i> C#.NET</span>
+    </div>
+
+</div>
+
+<div class="domain-card">
+
+    <div class="domain-header">
+        <div class="domain-icon">
+            <i class="fas fa-database"></i>
+        </div>
+
+        <div>
+            <h3>Database Management</h3>
+            <p>Designing and managing enterprise databases</p>
+        </div>
+    </div>
+
+    <div class="skill-tags">
+        <span><i class="fas fa-database"></i> MySQL</span>
+        <span><i class="fas fa-database"></i> Oracle SQL</span>
+        <span><i class="fas fa-server"></i> MS SQL</span>
+    </div>
+
+</div>
+
+<div class="domain-card">
+
+    <div class="domain-header">
+        <div class="domain-icon">
+            <i class="fas fa-robot"></i>
+        </div>
+
+        <div>
+            <h3>Automation Testing</h3>
+            <p>Creating automated test frameworks and validations</p>
+        </div>
+    </div>
+
+    <div class="skill-tags">
+        <span><i class="fas fa-vial"></i> Selenium</span>
+        <span><i class="fas fa-check-circle"></i> Pytest</span>
+        <span><i class="fab fa-jenkins"></i> Jenkins</span>
+    </div>
+
+</div>
+
+<div class="domain-card">
+
+    <div class="domain-header">
+        <div class="domain-icon">
+            <i class="fas fa-chart-line"></i>
+        </div>
+
+        <div>
+            <h3>Monitoring & Support</h3>
+            <p>Ensuring application health and operational excellence</p>
+        </div>
+    </div>
+
+    <div class="skill-tags">
+        <span><i class="fas fa-chart-bar"></i> Splunk</span>
+        <span><i class="fas fa-chart-line"></i> Kibana</span>
+        <span><i class="fas fa-ticket-alt"></i> ServiceNow</span>
+        <span><i class="fas fa-heartbeat"></i> Dynatrace</span>
+        <span><i class="fas fa-network-wired"></i> Nagios</span>
+    </div>
+
+</div>
+
+
+</section>
+<!-- ===================================== -->
+
+<!-- PROJECTS -->
+
+<!-- ===================================== -->
+
+<section id="projects" class="projects section">
+
+
+<div class="section-title" data-aos="fade-up">
+    <span>04</span>
+    <h2>Featured Projects</h2>
+</div>
+
+<div class="projects-grid">
+
+    <div class="project-card" data-aos="zoom-in">
+
+        <div class="project-number">01</div>
+
+        <h3>
+            Synthetic Health Monitoring System
+        </h3>
+
+        <p>
+            Developed a healthcare application
+            monitoring framework using Python,
+            Selenium and Pytest to simulate user
+            workflows and detect production issues.
+        </p>
+
+        <div class="tech-stack">
+            <span>Python</span>
+            <span>Selenium</span>
+            <span>Pytest</span>
+            <span>Splunk</span>
+            <span>Kibana</span>
+        </div>
+
+    </div>
+
+    <div class="project-card" data-aos="zoom-in">
+
+        <div class="project-number">02</div>
+
+        <h3>
+            Shipment Production Forecasting System
+        </h3>
+
+        <p>
+            Built a predictive analytics system using
+            Flask and Machine Learning to forecast
+            shipment production timelines.
+        </p>
+
+        <div class="tech-stack">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>REST API</span>
+            <span>Machine Learning</span>
+        </div>
+
+    </div>
+
+    <div class="project-card" data-aos="zoom-in">
+
+        <div class="project-number">03</div>
+
+        <h3>
+            Myntra Review Scraper
+        </h3>
+
+        <p>
+            Developed a review scraping and
+            sentiment analysis solution to
+            evaluate customer feedback in
+            real-time.
+        </p>
+
+        <div class="tech-stack">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>NLP</span>
+            <span>Sentiment Analysis</span>
+        </div>
+
+    </div>
+
+    <div class="project-card" data-aos="zoom-in">
+
+        <div class="project-number">04</div>
+
+        <h3>
+            Sensor Fault Detection System
+        </h3>
+
+        <p>
+            Machine learning application for
+            anomaly detection with over 80%
+            prediction accuracy.
+        </p>
+
+        <div class="tech-stack">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>NumPy</span>
+            <span>Scikit-Learn</span>
+        </div>
+
+    </div>
+
+    <div class="project-card" data-aos="zoom-in">
+
+        <div class="project-number">05</div>
+
+        <h3>
+            Manufacturing Tracking Platform
+        </h3>
+
+        <p>
+            Enterprise application developed for
+            manufacturing operations using Angular,
+            C#.NET and SQL Server.
+        </p>
+
+        <div class="tech-stack">
+            <span>Angular</span>
+            <span>C#.NET</span>
+            <span>SQL Server</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- ===================================== -->
+
+<!-- ACHIEVEMENTS -->
+
+<!-- ===================================== -->
+
+<section id="achievements" class="achievements section">
+
+
+<div class="section-title" data-aos="fade-up">
+
+    <span>05</span>
+    <h2>Achievements</h2>
+
+</div>
+
+<div class="achievement-grid">
+
+    <div class="achievement-card">
+
+        <i class="fas fa-award"></i>
+
+        <h3>
+            IBM Star Performer
+        </h3>
+
+        <p>
+            Recognized as Star Performer
+            in October 2025 for developing
+            Synthetic Health Automation
+            Framework.
+        </p>
+
+    </div>
+
+    <div class="achievement-card">
+
+        <i class="fas fa-rocket"></i>
+
+        <h3>
+            Automation Excellence
+        </h3>
+
+        <p>
+            Successfully implemented
+            monitoring frameworks to
+            improve system reliability.
+        </p>
+
+    </div>
+
+    <div class="achievement-card">
+
+        <i class="fas fa-laptop-code"></i>
+
+        <h3>
+            Freelance Success
+        </h3>
+
+        <p>
+            Delivered multiple client
+            projects involving full stack
+            web development.
+        </p>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- ===================================== -->
+
+<!-- CERTIFICATIONS -->
+
+<!-- ===================================== -->
+
+<section class="certifications section">
+
+<div class="section-title" data-aos="fade-up">
+
+    <span>06</span>
+    <h2>Certifications</h2>
+
+</div>
+
+<div class="certification-grid">
+
+    <div class="cert-card">
+        Agile Training
+    </div>
+
+    <div class="cert-card">
+        AWS Containers
+    </div>
+
+    <div class="cert-card">
+        Data Science Methodology
+    </div>
+
+    <div class="cert-card">
+        C Programming - QSpiders
+    </div>
+
+    <div class="cert-card">
+        Flutter - Let's Upgrade
+    </div>
+
+    <div class="cert-card">
+        Be10X Workshop
+    </div>
+
+    <div class="cert-card">
+        TruBranders Internship
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- ===================================== -->
+
+<!-- CONTACT -->
+
+<!-- ===================================== -->
+
+<section id="contact" class="contact section">
+
+
+<div class="section-title" data-aos="fade-up">
+
+    <span>07</span>
+    <h2>Contact Me</h2>
+
+</div>
+
+<div class="contact-container">
+
+    <div class="contact-card">
+
+        <h3>
+            Let's Build Something Amazing
+        </h3>
+
+        <p>
+            Interested in collaborating,
+            discussing opportunities,
+            or building innovative solutions?
+        </p>
+
+        <div class="contact-info">
+
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <span>
+                    sujanimahadikar@gmail.com
+                </span>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <span>
+                    +91 63661 95749
+                </span>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-location-dot"></i>
+                <span>
+                    Bengaluru, Karnataka, India
+                </span>
+            </div>
+
+        </div>
+
+        <div class="social-links">
+
+            <a href="#">
+                <i class="fab fa-linkedin"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-github"></i>
+            </a>+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- ===================================== -->
+
+<!-- FOOTER -->
+
+<!-- ===================================== -->
+
+<footer>
+
+
+<h3>
+    Sujani Mahadikar
+</h3>
+
+<p>
+    Production Support Engineer •
+    Full Stack Developer •
+    Automation Engineer
+</p>
+
+<p class="copyright">
+    © 2026 Sujani Mahadikar.
+    All Rights Reserved.
+</p>
+
+
+</footer>
+
+<!-- ===================================== -->
+
+<!-- SCROLL TOP BUTTON -->
+
+<!-- ===================================== -->
+
+<button id="scrollTopBtn">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- ===================================== -->
+
+<!-- JS LIBRARIES -->
+
+<!-- ===================================== -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<!-- CUSTOM JS -->
+
+<script src="js/script.js"></script>
 
 </body>
 </html>
